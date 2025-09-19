@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Bengal — Bengals Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Premium Bengals (bangles) collection — handcrafted, gold-plated, oxidized, and designer pieces for every occasion.">
+</head>
+
+<style>
+/* ---------- Base ---------- */
+:root{
+  --bg:#0f0f10;
+  --card:#141416;
+  --muted:#9aa0a6;
+  --brand:#d4af37;            /* luxe gold */
+  --accent:#e6c558;           /* soft gold */
+  --sale:#f05454;
+  --ok:#2bb673;
+  --text:#f8f9fa;
+  --cream:#f5efe6;
+  --outline:rgba(255,255,255,0.06);
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+*{
+  box-sizing:border-box
+}
+
+html,body{
+    margin:0;
+    padding:0;
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 75% -10%, #1b1b1e 0%, #0f0f10 60%, #0b0b0c 100%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Containers */
+.container{
+    width:min(1200px, 92%); 
+    margin:0 auto;
+}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  background: linear-gradient(90deg, rgba(212,175,55,.2), rgba(230,197,88,.15));
+  color:#f3e8c8;
+  font-size:.9rem;
+  border-bottom:1px solid var(--outline);
+}
+.topbar .container{
+    padding:.6rem 0; 
+    text-align:center;
+}
+
+/* ---------- Header ---------- */
+.header{
+  backdrop-filter: blur(8px);
+  position: sticky; 
+  top:0; 
+  z-index:50;
+  background: rgba(15,15,16,.75);
+  border-bottom:1px solid var(--outline);
+}
+
+
+.header__wrap{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    padding:1rem 0;
+}
+
+.logo{
+  font-weight:800; 
+  font-size:1.4rem; 
+  letter-spacing:.5px; 
+  color:#fff; 
+  text-decoration:none;
+}
+.logo span{
+    color:var(--brand);
+}
+
+.logo--footer{
+    font-size:1.2rem;
+}
+
+.nav a{
+  color:#cfd3d7; 
+  text-decoration:none; 
+  margin-left:1.2rem; 
+  font-weight:500; 
+  transition:.2s;
+  padding:.4rem .6rem; 
+  border-radius:999px; 
+  border:1px solid transparent;
+}
+
+
+.nav a:hover{
+    color:#fff; 
+    border-color:var(--outline);
+}
+
+.nav .active{
+    color:#111; 
+    background: linear-gradient(180deg, var(--brand), var(--accent)); 
+    border-color:transparent;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+    padding:3rem 0 2rem; 
+    border-bottom:1px solid var(--outline);
+}
+
+.hero__wrap{
+    display:grid; 
+    grid-template-columns:1.1fr .9fr; 
+    gap:2rem; 
+    align-items:center;
+}
+
+.hero__content h1{
+  font-size: clamp(1.8rem, 3.2vw + .5rem, 3rem);
+  margin:.2rem 0 .6rem;
+  letter-spacing:.3px;
+}
+.hero__content p{
+    color:var(--muted); 
+    max-width:50ch; 
+    margin:0 0 1.2rem;
+}
+
+.btn{
+  display:inline-block; 
+  text-decoration:none; 
+  font-weight:700; 
+  letter-spacing:.3px;
+  background: linear-gradient(180deg, var(--brand), var(--accent));
+  color:#111;
+   padding:.85rem 1.1rem; 
+   border-radius:14px; 
+   box-shadow: var(--shadow);
+  transform: translateY(0); 
+  transition: transform .15s ease, filter .2s ease;
+}
+
+
+.btn:hover{
+    transform: translateY(-2px); 
+    filter: brightness(1.04);}
+
+.hero__art .art{
+  height: 320px; 
+  border-radius: 22px; 
+  box-shadow: var(--shadow);
+  background:
+    radial-gradient(180px 120px at 70% 30%, rgba(212,175,55,.45), transparent 60%),
+    radial-gradient(180px 120px at 30% 70%, rgba(230,197,88,.35), transparent 60%),
+    linear-gradient(145deg, #191a1c, #0f0f10);
+  border:1px solid var(--outline);
+}
+
+/* ---------- Chips ---------- */
+.filters{
+    padding:1rem 0;
+}
+.filters__wrap{
+    display:flex;
+    flex-wrap:wrap; 
+    gap:.6rem;
+
+}
+
+.chip{
+  border:1px solid var(--outline); 
+  color:#e8e9ea; 
+  padding:.4rem .7rem; 
+  border-radius:999px;
+  font-size:.9rem; 
+  cursor:default; 
+  user-select:none; 
+  transition:.2s;
+  background-color: #111;
+}
+
+.chip:hover{
+  border: 1 px solid var(--outline);
+  color:#e8e9ea; 
+  padding:.4rem .7rem; 
+  border-radius:999px;
+  font-size:.9rem; 
+  cursor:default; 
+  user-select:none; 
+  transition:.2s;
+  color: rgba(212,175,55,.15);
+  border-color: rgba(212,175,55,.35);
+  color: #ffe9a9;
+}
+
+.chip--active{
+    background: rgba(212,175,55,.15); 
+    border-color: rgba(212,175,55,.35); 
+    color:#ffe9a9;
+}
+
+
+/* ---------- Products ---------- */
+.products{
+  display:grid; 
+  gap:1.1rem; 
+  padding:1.2rem 0 2.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--outline);
+  border-radius: 18px; 
+  overflow:hidden;
+   box-shadow: var(--shadow);
+  transform: translateY(0); 
+  transition: transform .18s ease, box-shadow .2s ease, border-color .2s;
+}
+.card:hover{
+    transform: translateY(-4px); 
+    border-color: rgba(212,175,55,.35);
+}
+
+.card__media{
+  position:relative; 
+  aspect-ratio: 1 / 1; 
+  background:#1a1b1d;
+  display:flex;
+  align-items:center; 
+  justify-content:center;
+}
+
+.card__media img{
+  width:100%;
+   height:100%; 
+   object-fit:cover; 
+   display:block; 
+   filter:saturate(102%);
+}
+.badge{
+  position:absolute; 
+  top:.6rem; 
+  left:.6rem;
+  font-size:.78rem; 
+  font-weight:700;
+  padding:.25rem .5rem; 
+  border-radius:999px; 
+  color:#111;
+  background: linear-gradient(180deg, var(--brand), var(--accent)); 
+  border:1px solid rgba(0,0,0,.08);
+}
+
+.badge--accent{
+    background: linear-gradient(180deg, #ffd27a, #ffefb0);
+}
+
+.badge--sale{
+    background: linear-gradient(180deg, #ff9a9a, #f05454);
+}
+.badge--sold{
+    background: linear-gradient(180deg, #b9c1c7, #e2e5e8); 
+    color:#222;
+}
+
+.card__body{
+    padding:.9rem .95rem 1.1rem;
+}
+
+.card__title{
+    margin:.1rem 0 .25rem; 
+    font-size:1.02rem;
+}
+
+.card__price{
+    color:#f3e8c8; 
+    font-weight:700;
+}
+
+.strike{
+    color:#c7c7c7; 
+    text-decoration: line-through; 
+    margin-right:.35rem;
+}
+
+.link{
+  display:inline-block; 
+  margin-top:.6rem; 
+  color:#ffe9a9; 
+  text-decoration:none; 
+  font-weight:600;
+  border-bottom:1px solid rgba(255,233,169,.35); 
+  padding-bottom:2px; 
+  transition:.2s;
+}
+
+.link:hover{
+    filter:brightness(1.07);
+}
+
+.link.disabled{opacity:.55; 
+    pointer-events:none; 
+    border-bottom-color:transparent;
+}
+
+/* ---------- Banner ---------- */
+.banner{
+  padding:2rem 0 2.4rem; 
+  border-top:1px solid var(--outline);
+  background: linear-gradient(180deg, rgba(212,175,55,.07), rgba(212,175,55,.03));
+}
+.banner__wrap{ 
+    text-align:center; 
+}
+
+.banner h2{
+    margin:.2rem 0 .3rem;
+}
+
+.banner p{
+    color:var(--muted); 
+    margin:0;
+}
+
+
+/* ---------- Footer ---------- */
+.footer{
+    border-top:1px solid var(--outline);
+     margin-top:1.2rem; 
+     background:#101113;
+}
+
+.footer__wrap{
+  display:flex;
+   gap:2rem; 
+   justify-content:space-between; 
+   align-items:flex-start;
+  padding:2rem 0 1.4rem;
+}
+.footer__cols{
+    display:grid; 
+    grid-template-columns: repeat(2, minmax(140px, 1fr)); 
+    gap:1.6rem;
+}
+
+.footer h4{
+    margin:.2rem 0 .6rem;
+}
+
+.footer ul{
+    list-style:none; 
+    margin:0; 
+    padding:0;
+}
+
+.footer li{
+    margin:.3rem 0;
+}
+
+.footer a{
+    color:#cfd3d7; 
+    text-decoration:none;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+.footer .muted{
+    color:var(--muted); 
+    max-width:38ch;
+}
+
+.footer__bottom{
+    border-top:1px solid var(--outline); 
+    padding: .9rem 0 1.4rem; 
+    text-align:center; 
+    color:#b9bdc2;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 920px){
+  .hero__wrap{
+    grid-template-columns:1fr; 
+    text-align:center;
+}
+  .hero__content p{
+    margin-inline:auto;
+}
+  .hero__art .art{
+    height:260px;
+}
+  .footer__wrap{
+    flex-direction:column;
+}
+  .footer__cols{
+    grid-template-columns: 1fr 1fr;
+}
+}
+@media (max-width: 520px){
+  .nav{
+    display:none;
+  }
+  .filters__wrap{
+    justify-content:flex-start;
+  }
+  .footer__cols{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+</style>
+
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>Free delivery over ৳2,000 • Cash on Delivery • 7-day returns</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__wrap">
+      <a href="#" class="logo">Luxe <span>Bengal</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="clothing.html">Clothing</a>
+        <a href="#" class="nav__link active">Bengal Collection</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__wrap">
+      <div class="hero__content">
+        <h1>Signature Bengals Collection</h1>
+        <p>Premium handcrafted bangles to elevate your festive & daily look. Elegant, durable, and skin-friendly.</p>
+        <a href="#products" class="btn">Shop the Collection</a>
+      </div>
+      <div class="hero__art">
+        <!-- Decorative gradient block for visual without JS -->
+        <div class="art"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters (static, no JS) -->
+  <section class="filters">
+    <div class="container filters__wrap">
+      <div class="chip chip--active">All</div>
+      <div class="chip">Gold Plated</div>
+      <div class="chip">Oxidized</div>
+      <div class="chip">Minimal</div>
+      <div class="chip">Bridal</div>
+      <div class="chip">Stone</div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <main id="products" class="container products">
+    <!-- Card 01 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/aurora.jpeg" alt="Aurora Gold-Plated Bengal" />
+        <span class="badge">New</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Aurora Gold-Plated</h3>
+        <p class="card__price">৳1,290</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 02 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/kada.jpeg" alt="Kada Bangles" />
+        <span class="badge badge--accent">Best</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Kada Bangles</h3>
+        <p class="card__price">৳980</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 03 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Polki Bangles.jpeg" alt="Polki Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Polki Bangles</h3>
+        <p class="card__price">৳1,650</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 04 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Kundan Bangles.jpeg" alt="Kundan Bangles" />
+        <span class="badge">New</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Kundan Bangles</h3>
+        <p class="card__price">৳1,150</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 05 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Meenakari Bangles.jpeg" alt="Meenakari Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Meenakari Bangles</h3>
+        <p class="card__price">৳1,890</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 06 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Temple Bangles.jpeg" alt="Temple Bangles" />
+        <span class="badge badge--sale">-20%</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Temple Bangles</h3>
+        <p class="card__price"><span class="strike">৳1,500</span> ৳1,200</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 07 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Antique Gold Bangles.jpeg" alt="Antique Gold Bangles" />
+        <span class="badge">Set</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Antique Gold Bangles<h3>
+        <p class="card__price">৳2,990</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 08 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Filigree Bangles.jpeg" alt="Filigree Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Filigree Bangles</h3>
+        <p class="card__price">৳1,350</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 09 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Diamond Bangles.jpeg" alt="Diamond Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Diamond Bangles</h3>
+        <p class="card__price">৳1,450</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 10 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Cuff Bangles.jpeg" alt="Cuff Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Cuff Bangles</h3>
+        <p class="card__price">৳1,280</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 11 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Pearl Bangles.jpeg" alt="Pearl Bangles" />
+        <span class="badge badge--accent">Hot</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Pearl Bangles</h3>
+        <p class="card__price">৳1,760</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 12 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Glass Bangles.jpeg" alt="Glass Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Glass Bangles</h3>
+        <p class="card__price">৳1,390</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 13 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Lac Bangles.jpeg" alt="Lac Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Lac Bangles</h3>
+        <p class="card__price">৳1,990</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 14 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Stone-studded Bangles.jpeg" alt="Stone-studded Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Stone-studded Bangles</h3>
+        <p class="card__price">৳1,180</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+
+    <!-- Card 15 -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Platinum Bangles.jpeg" alt="Platinum Bangles" />
+        <span class="badge badge--sold">Sold out</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Platinum Bangles</h3>
+        <p class="card__price">৳1,050</p>
+        <a href="#" class="link disabled" aria-disabled="true">Unavailable</a>
+      </div>
+    </article>
+
+    <!-- Card 16 (bonus) -->
+    <article class="card">
+      <div class="card__media">
+        <img src="/Code images/Charm Bangles.jpeg" alt="Charm Bangles" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">Charm Bangles</h3>
+        <p class="card__price">৳1,120</p>
+        <a href="#" class="link">View details</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container banner__wrap">
+      <h2>Festival Offer: Buy 2, Get 10% Off</h2>
+      <p>Mix & match any bengals. Discount applied at checkout.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div>
+        <div class="logo logo--footer">Luxe <span>Bengal</span></div>
+        <p class="muted">Premium Bengals for every occasion. Hypoallergenic • Nickel free • Tarnish resistant.</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All Bengals</a></li>
+            <li><a href="#">Gift Sets</a></li>
+            <li><a href="#">Under ৳1,500</a></li>
+            <li><a href="#">Care Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Sizing Help</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <small>© <span id="year">2025</span> Luxe Bengal. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>

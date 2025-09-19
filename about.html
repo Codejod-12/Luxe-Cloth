@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Luxe Premium Clothing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fdfdfd;
+  color: #FFF;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: #fffdfd;
+  color: #ffffff;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #111;
+}
+.logo span {
+  color: #111;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.navbar a:hover, .navbar a.active {
+  color: #111   ;
+}
+
+/* Hero */
+.about-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #111, #333);
+  color: #fff;
+}
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.about-hero p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Content */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 8%;
+  gap: 2rem;
+  align-items: center;
+}
+.about-text {
+  flex: 1 1 50%;
+}
+.about-text h2 {
+  margin-bottom: 0.5rem;
+  color: #c9a227;
+}
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+.about-image {
+  flex: 1 1 40%;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Values */
+.values {
+  background: #f7f7f7;
+  text-align: center;
+  padding: 3rem 5%;
+}
+.values h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+.value-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card h3 {
+  margin-bottom: 0.8rem;
+  color: #c9a227;
+}
+
+.card p{
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+</style>
+  <header class="navbar">
+    <div class="logo">Luxe<span>Bengal</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clothing.html">Clothing</a></li>
+        <li><a href="bengal.html">Bengals Collection</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-hero">
+    <h1>About Luxe Premium Clothing</h1>
+    <p>Crafting timeless fashion with a modern edge.</p>
+  </section>
+
+  <section class="about-content">
+    <div class="about-text">
+      <h2>Our Story</h2>
+      <p>
+        Founded with passion for style, Luxe Premium Clothing represents elegance, comfort, 
+        and confidence. We create fashion pieces that not only look good but also feel good.  
+        Every collection is designed with meticulous attention to detail and quality fabrics 
+        that define premium fashion. 
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        To bring luxury fashion within reach — blending sophistication, sustainability, 
+        and modern design. We believe in empowering individuals through clothing that 
+        speaks to their personality. 
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80" alt="Fashion clothing display">
+    </div>
+  </section>
+
+  <section class="values">
+    <h2>Our Values</h2>
+    <div class="value-cards">
+      <div class="card">
+        <h3>Quality</h3>
+        <p>We use premium fabrics to ensure every product lasts with elegance.</p>
+      </div>
+      <div class="card">
+        <h3>Design</h3>
+        <p>Timeless styles blended with modern trends for a unique look.</p>
+      </div>
+      <div class="card">
+        <h3>Sustainability</h3>
+        <p>Fashion that respects both people and the planet.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Luxe Premium Clothing. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Bengal - Clothing Collection</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #111;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color:#555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #111;
+        }
+        
+        .nav-links a.active {
+            color: #111;
+            
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), #8B4513;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Filter Section */
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #8B4513;
+            color: white;
+        }
+        
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            color: #8B4513;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .add-to-cart {
+            display: inline-block;
+            background: #8B4513;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: #A0522D;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8B4513;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .filter-options {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LUXE BENGAL</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Clothing</a></li>
+                    <li><a href="bengal.html">Bengal Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Exquisite Bengal Clothing Collection</h1>
+            <p>Discover our premium collection of traditional and contemporary Bengali attire</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Filter Options -->
+        <section class="filters">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="saree">Sarees</button>
+                <button class="filter-btn" data-filter="punjabi">Punjabi</button>
+                <button class="filter-btn" data-filter="shirt">Shirts</button>
+                <button class="filter-btn" data-filter="pant">Pants</button>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- Saree 1 -->
+            <div class="product-card" data-category="saree">
+                <img src="/Code images/download (7).jpeg" alt="Elegant red Bengali saree with golden border and intricate design" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Saree</div>
+                    <h3 class="product-title">Red Baluchari Saree</h3>
+                    <div class="product-price">₹4,500</div>
+                    <p class="product-description">Handwoven Baluchari silk saree with traditional Bengali motifs and golden zari work.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Saree 2 -->
+            <div class="product-card" data-category="saree">
+                <img src="/Code images/images (9).jpeg" alt="Royal blue Bengali saree with silver embroidery and delicate patterns" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Saree</div>
+                    <h3 class="product-title">Navy Blue Tant Saree</h3>
+                    <div class="product-price">₹3,200</div>
+                    <p class="product-description">Pure cotton Tant saree with traditional Jamdani weaving and silver thread work.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Saree 3 -->
+            <div class="product-card" data-category="saree">
+                <img src="/Code images/images.jpeg" alt="Green and gold Bengali saree with elaborate border design and pallu" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Saree</div>
+                    <h3 class="product-title">Emergreen Silk Saree</h3>
+                    <div class="product-price">₹5,800</div>
+                    <p class="product-description">Luxurious Murshidabad silk with intricate floral patterns and gold zari border.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Saree 4 -->
+            <div class="product-card" data-category="saree">
+                <img src="/Code images/images (1).jpeg" alt="White and red Bengali saree with traditional designs and minimalist elegance" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Saree</div>
+                    <h3 class="product-title">White Korial Saree</h3>
+                    <div class="product-price">₹3,900</div>
+                    <p class="product-description">Lightweight Korial cotton with red traditional motifs, perfect for summer occasions.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Saree 5 -->
+            <div class="product-card" data-category="saree">
+                <img src="/Code images/images (2).jpeg" alt="Maroon Bengali saree with golden thread work and elaborate pallu design" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Saree</div>
+                    <h3 class="product-title">Maroon Dhakai Saree</h3>
+                    <div class="product-price">₹6,200</div>
+                    <p class="product-description">Premium Dhakai muslin with intricate gold embroidery and traditional Bengali patterns.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Punjabi 1 -->
+            <div class="product-card" data-category="punjabi">
+                <img src="/Code images/download.jpeg" alt="White Cotton Punjabi" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Punjabi</div>
+                    <h3 class="product-title">White Cotton Punjabi</h3>
+                    <div class="product-price">₹1,800</div>
+                    <p class="product-description">Comfortable cotton Punjabi with traditional Bengali embroidery on neck and cuffs.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Punjabi 2 -->
+            <div class="product-card" data-category="punjabi">
+                <img src="/Code images/download (1).jpeg" alt="Black formal Bengali punjabi with golden buttons and elegant design" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Punjabi</div>
+                    <h3 class="product-title">Black Silk Punjabi</h3>
+                    <div class="product-price">₹2,500</div>
+                    <p class="product-description">Premium silk Punjabi with golden buttons and intricate embroidery, perfect for formal events.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Punjabi 3 -->
+            <div class="product-card" data-category="punjabi">
+                <img src="/Code images/download (2).jpeg" alt="Blue and white striped Bengali punjabi with traditional patterns" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Punjabi</div>
+                    <h3 class="product-title">Navy Striped Punjabi</h3>
+                    <div class="product-price">₹2,100</div>
+                    <p class="product-description">Lightweight cotton Punjabi with traditional striped pattern and comfortable fit.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Punjabi 4 -->
+            <div class="product-card" data-category="punjabi">
+                <img src="/Code images/download (3).jpeg" alt="Cream colored Bengali punjabi with red border and minimal embroidery" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Punjabi</div>
+                    <h3 class="product-title">Cream Punjabi with Red Border</h3>
+                    <div class="product-price">₹2,300</div>
+                    <p class="product-description">Elegant cream-colored Punjabi with traditional red border design and subtle embroidery.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Punjabi 5 -->
+            <div class="product-card" data-category="punjabi">
+                <img src="/Code images/download (4).jpeg" alt="Green Bengali punjabi with golden thread work and festive design" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Punjabi</div>
+                    <h3 class="product-title">Green Festive Punjabi</h3>
+                    <div class="product-price">₹3,400</div>
+                    <p class="product-description">Vibrant green Punjabi with extensive gold embroidery, perfect for festivals and weddings.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Shirt 1 -->
+            <div class="product-card" data-category="shirt">
+                <img src="/Code images/download (5).jpeg" alt="White Bengali cotton shirt with traditional embroidery on collar" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3 class="product-title">White Cotton Shirt</h3>
+                    <div class="product-price">₹1,500</div>
+                    <p class="product-description">Comfortable cotton shirt with traditional Bengali embroidery details on collar and cuffs.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Shirt 2 -->
+            <div class="product-card" data-category="shirt">
+                <img src="/Code images/download (6).jpeg" alt="Blue linen Bengali shirt with minimal design and comfortable fit" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3 class="product-title">Sky Blue Linen Shirt</h3>
+                    <div class="product-price">₹1,800</div>
+                    <p class="product-description">Breathable linen shirt in sky blue with traditional Bengali minimalist design elements.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Shirt 3 -->
+            <div class="product-card" data-category="shirt">
+                <img src="/Code images/download (8).jpeg" alt="Black formal Bengali shirt with golden buttons and elegant cuffs" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3 class="product-title">Black Formal Shirt</h3>
+                    <div class="product-price">₹2,200</div>
+                    <p class="product-description">Premium formal shirt with golden buttons and intricate embroidery on cuffs.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Shirt 4 -->
+            <div class="product-card" data-category="shirt">
+                <img src="/Code images/download (9).jpeg" alt="Maroon Bengali shirt with contrast stitching and traditional patterns" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3 class="product-title">Maroon Designer Shirt</h3>
+                    <div class="product-price">₹2,600</div>
+                    <p class="product-description">Rich maroon shirt with contrast stitching and traditional Bengali pattern details.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Shirt 5 -->
+            <div class="product-card" data-category="shirt">
+                <img src="/Code images/download (10).jpeg" alt="Beige Bengali shirt with brown embroidery and earthy tones" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3 class="product-title">Beige Casual Shirt</h3>
+                    <div class="product-price">₹1,900</div>
+                    <p class="product-description">Casual beige shirt with earthy tone embroidery and comfortable relaxed fit.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Pant 1 -->
+            <div class="product-card" data-category="pant">
+                <img src="/Code images/download (11).jpeg" alt="White Bengali cotton pants with comfortable fit and traditional design" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Pant</div>
+                    <h3 class="product-title">White Cotton Pants</h3>
+                    <div class="product-price">₹1,400</div>
+                    <p class="product-description">Comfortable white cotton pants with traditional Bengali cut and design.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Pant 2 -->
+            <div class="product-card" data-category="pant">
+                <img src="/Code images/download (12).jpeg" alt="Black formal Bengali pants with sharp crease and elegant fit" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Pant</div>
+                    <h3 class="product-title">Black Formal Pants</h3>
+                    <div class="product-price">₹1,800</div>
+                    <p class="product-description">Elegant black formal pants with perfect fit and traditional Bengali styling.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Pant 3 -->
+            <div class="product-card" data-category="pant">
+                <img src="/Code images/download (13).jpeg" alt="Beige linen Bengali pants with comfortable waistband and relaxed fit" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Pant</div>
+                    <h3 class="product-title">Beige Linen Pants</h3>
+                    <div class="product-price">₹1,600</div>
+                    <p class="product-description">Lightweight linen pants in beige with comfortable fit and traditional design.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Pant 4 -->
+            <div class="product-card" data-category="pant">
+                <img src="/Code images/download (14).jpeg" alt="Navy blue Bengali pants with contrast stitching and tailored fit" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Pant</div>
+                    <h3 class="product-title">Navy Tailored Pants</h3>
+                    <div class="product-price">₹2,000</div>
+                    <p class="product-description">Well-tailored navy pants with contrast stitching and traditional Bengali details.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Pant 5 -->
+            <div class="product-card" data-category="pant">
+                <img src="/Code images/images (3).jpeg" alt="Grey Bengali pants with modern cut and traditional elements" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Pant</div>
+                    <h3 class="product-title">Grey Modern Pants</h3>
+                    <div class="product-price">₹1,900</div>
+                    <p class="product-description">Contemporary grey pants blending modern cut with traditional Bengali design elements.</p>
+                    <a href="#" class="add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE BENGAL</h3>
+                    <p>Premium Bengali clothing for the modern connoisseur of traditional fashion.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collection.html">Clothing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@luxebengal.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Kolkata, West Bengal</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LUXE BENGAL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

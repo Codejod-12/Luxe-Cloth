@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Premium - Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f8f8f8;
+      color: #222;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #111;
+    }
+
+    .logo span {
+      color: #111;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #b9aeae;
+     
+    }
+
+    /* Hero */
+    .about-hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #111, #333);
+      color: #fff;
+    }
+
+    .about-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #111;
+    }
+
+    .contact-container p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    form .input-group {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #111;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      background: #111;
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    .contact-info {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    @media (max-width: 900px) {
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Luxe<span>Bengal</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clothing.html">Clothing</a></li>
+        <li><a href="bengal.html">Bengals-Collection</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h1>Contact Luxe Premium</h1>
+      <p>We’d love to hear from you! Reach out to us for inquiries, collaborations, or support.</p>
+      
+      <div class="contact-box">
+        <form>
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <h2>Our Details</h2>
+          <p><strong>Email:</strong> support@luxepremium.com</p>
+          <p><strong>Phone:</strong> +880 158 614 2822</p>
+          <p><strong>Address:</strong> Mirpur, Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
